@@ -1,0 +1,73 @@
+
+@each $index, $value in $colores {
+    .g--bg-color-#{$index} {
+        background-color: $value;
+    }
+  
+}
+
+
+@each $media, $medvalue in $medias {
+
+    @media (min-width: $medvalue) {
+        
+        @each $color, $colvalue in $colores {
+            .g--bg-color-#{$color}\@#{$media} {
+                background-color: $colvalue;
+            }
+        
+        }
+       
+
+    }
+  
+}
+
+
+
+
+// @media (min-width: 572px) {
+//     .g--bg-color-red\@mobil {
+//         background-color:red;
+//     }
+//     .g--bg-color-green\@mobil {
+//         background-color:green;
+//     }
+//     .g--bg-color-blue\@mobil {
+//         background-color:blue;
+//     }
+//     .g--bg-color-orange\@mobil {
+//         background-color:orange;
+//     }
+// }
+
+
+// @media (min-width: 768px) {
+//     .g--bg-color-red\@tablet {
+//         background-color:red;
+//     }
+//     .g--bg-color-green\@tablet {
+//         background-color:green;
+//     }
+//     .g--bg-color-blue\@tablet {
+//         background-color:blue;
+//     }
+//     .g--bg-color-orange\@tablet {
+//         background-color:orange;
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     .g--bg-color-red\@desktop {
+//         background-color:red;
+//     }
+//     .g--bg-color-green\@desktop {
+//         background-color:green;
+//     }
+//     .g--bg-color-blue\@desktop {
+//         background-color:blue;
+//     }
+//     .g--bg-color-orange\@desktop {
+//         background-color:orange;
+//     }
+// }

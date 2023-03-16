@@ -1,0 +1,63 @@
+@each $clave in getPaddingKeys() {
+  //@debug $clave;
+  $value: getPadding($clave);
+  .g--padding-#{$clave} {
+    padding: $value;
+  }
+  .g--padding-left-#{$clave} {
+    padding-left: $value;
+  }
+  .g--padding-right-#{$clave} {
+    padding-right: $value;
+  }
+  .g--padding-top-#{$clave} {
+    padding-top: $value;
+  }
+  .g--padding-bottom-#{$clave} {
+    padding-bottom: $value;
+  }
+  .g--padding-horizontal-#{$clave} {
+    padding-right: $value;
+    padding-left: $value;
+  }
+  .g--padding-vertical-#{$clave} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+
+@each $media, $medvalue in $medias {
+  @media (min-width: $medvalue) {
+
+
+    @each $clave in getPaddingKeys() {
+      //@debug $clave;
+      $value: getPadding($clave);
+      .g--padding-#{$clave}\@#{$media} {
+        padding: $value;
+      }
+      .g--padding-left-#{$clave}\@#{$media} {
+        padding-left: $value;
+      }
+      .g--padding-right-#{$clave}\@#{$media} {
+        padding-right: $value;
+      }
+      .g--padding-top-#{$clave}\@#{$media} {
+        padding-top: $value;
+      }
+      .g--padding-bottom-#{$clave}\@#{$media} {
+        padding-bottom: $value;
+      }
+      .g--padding-horizontal-#{$clave}\@#{$media} {
+        padding-right: $value;
+        padding-left: $value;
+      }
+      .g--padding-vertical-#{$clave}\@#{$media} {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+    }
+  
+  }
+}

@@ -1,0 +1,20 @@
+@each $key in getBorderRadiusKeys(){
+    .g--border-radius-#{$key}{
+        border-radius: getBorderRadius($key);
+    }
+}
+
+
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+
+        @each $key in getBorderRadiusKeys(){
+            .g--border-radius-#{$key}\@#{$media}{
+                border-radius: getBorderRadius($key);
+            }
+        }
+        
+         
+    }
+}
+  

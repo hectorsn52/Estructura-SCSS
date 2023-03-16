@@ -1,0 +1,133 @@
+@each $key in getMarginKeys(){
+
+    .g--margin-#{$key}{
+        margin: getMargin($key);
+    }
+    
+    .g--margin-horizontal-#{$key}{
+        margin-left: getMargin($key);
+        margin-right: getMargin($key);
+    }
+
+    .g--margin-vertical-#{$key}{
+        margin-top: getMargin($key);
+        margin-bottom: getMargin($key);
+    }
+
+    .g--margin-top-#{$key}{
+        margin-top: getMargin($key);
+    }
+
+    .g--margin-bottom-#{$key}{
+        margin-bottom: getMargin($key);
+    }
+
+    .g--margin-left-#{$key}{
+        margin-left: getMargin($key);
+    }
+
+    .g--margin-right-#{$key}{
+        margin-right: getMargin($key);
+    }
+
+}
+
+
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+        @each $key in getMarginKeys(){
+
+            .g--margin-#{$key}\@#{$media}{
+                margin: getMargin($key);
+            }
+            
+            .g--margin-horizontal-#{$key}\@#{$media}{
+                margin-left: getMargin($key);
+                margin-right: getMargin($key);
+            }
+        
+            .g--margin-vertical-#{$key}\@#{$media}{
+                margin-top: getMargin($key);
+                margin-bottom: getMargin($key);
+            }
+        
+            .g--margin-top-#{$key}\@#{$media}{
+                margin-top: getMargin($key);
+            }
+        
+            .g--margin-bottom-#{$key}\@#{$media}{
+                margin-bottom: getMargin($key);
+            }
+        
+            .g--margin-left-#{$key}\@#{$media}{
+                margin-left: getMargin($key);
+            }
+        
+            .g--margin-right-#{$key}\@#{$media}{
+                margin-right: getMargin($key);
+            }
+        
+        }
+        
+         
+    }
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @for $key from 1 to length($margins) {
+//     $clave: $key - 1;
+//     $valor: nth($margins, $key);
+
+//     .g--margin-#{$clave}{
+//         margin:  $valor;
+//     }
+
+//     .g--margin-top-#{$clave}{
+//         margin-top: $valor;
+//     }
+
+//     .g--margin-left-#{$clave}{
+//         margin-left: $valor;
+//     }
+
+//     .g--margin-right-#{$clave}{
+//         margin-right:  $valor;
+//     }
+
+//     .g--margin-bottom-#{$clave}{
+//         margin-bottom:  $valor;
+//     }
+
+//     .g--margin-vertical-#{$clave}{
+//         margin-top:  $valor;
+//         margin-bottom:  $valor;
+//     }
+
+//     .g--margin-horizontal-#{$clave}{
+//         margin-left:  $valor;
+//         margin-right:  $valor;
+//     }
+// }

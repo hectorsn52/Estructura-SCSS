@@ -1,0 +1,21 @@
+
+@each $key in getShadowKeys() {
+    .g--shadow-#{$key}{
+        @include box-shadow($key)
+    }
+}
+
+
+  
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+  
+        @each $key in getShadowKeys() {
+            .g--shadow-#{$key}\@#{$media}{
+                @include box-shadow($key)
+            }
+        }
+    
+    }
+}
+  

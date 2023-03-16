@@ -1,0 +1,163 @@
+@function getBorderSize($size){
+    @return $size *10px;
+}
+
+
+//Colors
+
+@function getColorVariants($key) {
+    @return length(map-get($colors,""+$key));
+}
+
+   
+@function getColor($key,$index) {
+    @return nth(map-get($colors,$key),$index + 1);
+}
+
+@function getColorKeys() {
+    @return map-keys($colors);
+}
+
+
+
+//Shadow Keys
+
+@function getShadowKeys(){
+    $resultado:();
+    @for $key from 0 to length($profundidades) {
+        $resultado:append($resultado, $key + 1);
+    }
+
+    @return $resultado;
+
+}
+
+@function getShadow($profun){
+    @return unquote(nth($profundidades, $profun));
+}
+
+
+
+
+
+
+//Border-radius
+
+@function  getBorderRadiusKeys(){
+    $resultado:();
+    @for $i from 0 to length($border-radius){
+        $resultado:append($resultado, $i);
+    }
+
+    @return $resultado;
+}
+
+
+@function getBorderRadius($key){
+    @return nth($border-radius, $key + 1);
+}
+
+
+
+//Margin
+
+@function getMarginKeys(){
+    $resultado:();
+
+    @for $i from 0 to length($margins){
+        $resultado:append($resultado, $i)
+    }
+
+    @return $resultado;
+}
+
+
+@function getMargin($key) {
+    @return nth($margins, $key + 1);
+}
+
+
+
+//Gap Lorenzo Muy Pro
+
+@function getGapKeys() {
+    $resultado:();
+    @for $i from 0 to length($gap) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+}
+
+
+@function getGap($key){
+    @return nth($gap, $key+1);
+}
+
+
+
+//Padding
+
+@function getPadding($key) {
+    @return nth($padding, $key + 1);
+}
+  
+@function getPaddingKeys() {
+    $resultado:();
+    @for $i from 0 to length($padding) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+  
+}
+
+//Font Weight
+
+@function getWeightKeys() {
+    $resultado:();
+    @for $i from 0 to length($weights) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+}
+
+
+@function getFontWeight($key){
+    @return nth($weights, $key + 1);
+}
+
+//Font Size
+
+@function getFontSize($key){
+    @return map-get($font-sizes,$key);
+}
+
+//medias
+
+@function getMedia($key){
+    @return map-get($medias,$key);
+}
+
+//width
+
+@function getWidth($key) {
+    @return nth($width, $key + 1);
+}
+  
+@function getWidthKeys() {
+    $resultado:();
+    @for $i from 0 to length($width) {
+      $resultado:append($resultado, $i);
+    }
+    
+    @return $resultado;
+  
+}
+
+//fuentes
+
+@function getFontFamily($key){
+    @return map-get($fuentes,$key);
+}

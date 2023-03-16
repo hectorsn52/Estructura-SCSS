@@ -1,0 +1,22 @@
+@each $colortype in getColorKeys() {
+    @for $contador from 0 to  getColorVariants($colortype){
+        .g--border-color-#{$colortype}-#{$contador}{
+           border-color: getColor($colortype, $contador); 
+        }
+    }
+}
+
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+
+        @each $colortype in getColorKeys() {
+            @for $contador from 0 to  getColorVariants($colortype){
+                .g--border-color-#{$colortype}-#{$contador}\@#{$media}{
+                   border-color: getColor($colortype, $contador); 
+                }
+            }
+        }
+         
+    }
+}
+  

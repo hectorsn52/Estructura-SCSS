@@ -1,0 +1,22 @@
+
+
+@each  $alignvalue in $aligns {
+    .g--text-aling-#{$alignvalue}{
+        text-align: $alignvalue;
+    }
+}
+
+
+  
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+
+        @each  $alignvalue in $aligns {
+            .g--text-aling-#{$alignvalue}\@#{$media}{
+                text-align: $alignvalue;
+            }
+        }
+        
+    }
+}
+  

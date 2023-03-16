@@ -1,0 +1,27 @@
+@each $key in getWidthKeys() {
+    .g--width-#{$key} {
+        width: getWidth($key);
+    }
+    .g--min-width-#{$key} {
+        min-width: getWidth($key);
+    }
+    .g--max-width-#{$key} {
+        max-width: getWidth($key);
+    }
+}
+
+@each $media, $medvalue in $medias {
+    @media (min-width: $medvalue) {
+        @each $key in getWidthKeys() {
+            .g--width-#{$key}\@#{$media} {
+                width: getWidth($key);
+            }
+            .g--min-width-#{$key}\@#{$media} {
+                min-width: getWidth($key);
+            }
+            .g--max-width-#{$key}\@#{$media} {
+                max-width: getWidth($key);
+            }
+        }
+    }
+}

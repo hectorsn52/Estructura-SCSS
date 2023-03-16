@@ -1,0 +1,164 @@
+.l-flex{
+
+    display: flex;
+
+    //Direction 
+
+    &--direction-row{
+        flex-direction: row;
+    }
+
+    &--direction-column{
+        flex-direction: column;
+    }
+
+    &--direction-row-reverse{
+        flex-direction: row-reverse;
+    }
+
+    &--direction-column-reverse{
+        flex-direction: column-reverse;
+    }
+
+    //Wrap 
+    &--wrap{
+        flex-wrap: wrap;
+    }
+    &--wrap-reverse{
+        flex-wrap: wrap-reverse;
+    }
+    &--nowrap{
+        flex-wrap: nowrap;
+    }
+
+    //Justify content
+    &--justify-content-end{
+        justify-content: flex-end;
+    }
+    
+    &--justify-content-start{
+        justify-content: flex-start;
+    }
+
+    &--justify-content-center{
+        justify-content: center;
+    }
+
+    &--justify-content-space-between{
+        justify-content: space-between;
+    }
+    
+    //Align Items
+    &--align-items-start{
+        align-items: flex-start;
+    }
+
+    &--align-items-end{
+        align-items: flex-end;
+    }
+
+    &--align-items-center{
+        align-items: center;
+    }
+
+
+    @each $gap in getGapKeys() {
+        &--gap-#{$gap}{
+            gap: getGap($gap);
+        }
+
+        &--horizontal-gap-#{$gap}{
+            row-gap: getGap($gap);
+        }
+
+        &--vertical-gap-#{$gap}{
+            column-gap: getGap($gap);
+        }
+    }
+
+}
+
+
+@each $media, $medvalue in $medias {
+
+    @media (min-width: $medvalue) {
+
+        .l-flex{
+
+        
+
+        &--direction-row\@#{$media}{
+            flex-direction: row;
+        }
+    
+        &--direction-column\@#{$media}{
+            flex-direction: column;
+        }
+    
+        &--direction-row-reverse\@#{$media}{
+            flex-direction: row-reverse;
+        }
+    
+        &--direction-column-reverse\@#{$media}{
+            flex-direction: column-reverse;
+        }
+    
+        //Wrap 
+        &--wrap\@#{$media}{
+            flex-wrap: wrap;
+        }
+        &--wrap-reverse\@#{$media}{
+            flex-wrap: wrap-reverse;
+        }
+        &--nowrap\@#{$media}{
+            flex-wrap: nowrap;
+        }
+    
+        //Justify content
+        &--justify-content-end\@#{$media}{
+            justify-content: flex-end;
+        }
+        
+        &--justify-content-start\@#{$media}{
+            justify-content: flex-start;
+        }
+    
+        &--justify-content-center\@#{$media}{
+            justify-content: center;
+        }
+    
+        &--justify-content-space-between\@#{$media}{
+            justify-content: space-between;
+        }
+        
+        //Align Items
+        &--align-items-start\@#{$media}{
+            align-items: flex-start;
+        }
+    
+        &--align-items-end\@#{$media}{
+            align-items: flex-end;
+        }
+    
+        &--align-items-center\@#{$media}{
+            align-items: center;
+        }
+    
+    
+        @each $gap in getGapKeys() {
+            &--gap-#{$gap}\@#{$media}{
+                gap: getGap($gap);
+            }
+    
+            &--horizontal-gap-#{$gap}\@#{$media}{
+                row-gap: getGap($gap);
+            }
+    
+            &--vertical-gap-#{$gap}\@#{$media}{
+                column-gap: getGap($gap);
+            }
+        }
+    
+    }
+}
+}
